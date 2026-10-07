@@ -3,7 +3,7 @@ name: Build EXE
 on:
   push:
     branches: [ main, master ]
-  workflow_dispatch: # Дозволяє запускати збірку вручну кнопкою на сайті
+  workflow_dispatch:
 
 jobs:
   build:
@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: List files for debugging
+      run: dir /s # Це покаже всі файли в репозиторії у логах збірки
 
     - name: Set up Python
       uses: actions/setup-python@v5
