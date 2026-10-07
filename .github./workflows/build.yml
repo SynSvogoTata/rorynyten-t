@@ -2,7 +2,8 @@ name: Build EXE
 
 on:
   push:
-    branches: [ main, master ] # Збиратиме `.exe` щоразу, коли ви робите push у головну гілку
+    branches: [ main, master ]
+  workflow_dispatch: # Дозволяє запускати збірку вручну кнопкою на сайті
 
 jobs:
   build:
